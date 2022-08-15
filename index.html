@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js" ></script>
+      <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>>
+        <script src="./Throw.js"></script>
+    </head>
+    <body>
+      <a-scene id="scene">
+         <a-assets>
+            <a-assets-item id="ball-obj" src="./assets/PM_Baked_Pin_1-16-20_01.obj"></a-assets-item>
+            <a-assets-item id="ball-mtl" src="./assets/PM_Baked_Pin_1-16-20_01.mtl"></a-assets-item>
+         </a-assets>
+         <!--Light-->
+        <a-entity light="type: ambient; color: white; intensity:0.5"></a-entity>   
+        <a-entity light="type: directional; color: #EEE; intensity: 1" position="-1 1 0"></a-entity>
+
+        <a-entity  bowling-ball ></a-entity>
+
+        <!--Camera and Cursor-->
+        <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls="pointerLockEnabled: false">
+          <a-cursor></a-cursor>
+        </a-entity>    
+        
+        <a-plane id="ground" rotation="-90 0 0" position="0 0 0" height="200" width="200" color="pink" static-body></a-plane>
+
+        <a-box position="10 1 -20" rotation="-90 0 0" height="100" width="2" color="red"></a-box>
+        <a-box position="-10 1 -20" rotation="-90 0 0" height="100" width="2" color="red"></a-box>
+
+        <!-- boxes -->
+        <a-box id="box1" position="-2 1.5 -10" color="tomato" depth="1" height="1" width="1.2" dynamic-body></a-box>
+        <a-box id="box2" position="0 1.5 -10" color="tomato" depth="1" height="1" width="1.2"  dynamic-body></a-box>
+        <a-box id="box3" position="2 1.5 -10" color="tomato" depth="1" height="1" width="1.2" dynamic-body></a-box>
+        <a-box id="box4" position="-1 2.5 -10" color="tomato" depth="1" height="1" width="1.2" dynamic-body></a-box>
+        <a-box id="box5" position="1 2.5 -10" color="tomato" depth="1" height="1" width="1.2" dynamic-body></a-box>
+        <a-box id="box6" position="0 3.5 -10" color="tomato" depth="1" height="1" width="1.2" dynamic-body></a-box>
+    </a-scene>
+    </body>
+</html>
